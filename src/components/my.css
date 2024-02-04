@@ -1,0 +1,64 @@
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+.slider-wrapper {
+  display: flex;
+  width: 500%; /* 5 cards, each taking up 100% of the container width */
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 20%; /* Each card takes up 20% of the container width */
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+.left-border {
+  border-left: 1px solid black; /* You can customize the border style and color */
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1;
+}
+
+.dropdown-row {
+  display: flex;
+  justify-content: space-between;
+}
