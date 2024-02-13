@@ -1,37 +1,3 @@
-// import React from "react";
-// import "./App.css";
-// import Navbar from "./components/Navbar";
-// import Started from "./components/Started";
-// import About from "./components/About";
-
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Home from "./components/Home";
-// import Contact from "./components/Contact";
-// import Web from "./components/Web";
-// import Mobile from "./components/Mobile";
-
-// function App() {
-//   return (
-//     <>
-//       <Navbar />
-//       <BrowserRouter>
-//         <Routes>
-//           <Route index path="/" element={<Home />} />
-
-//           <Route path="/Started" element={<Started />} />
-//           <Route path="/About" element={<About />} />
-
-//           <Route path="/Contact" element={<Contact />} />
-//           <Route path="/Web" element={<Web />} />
-//           <Route path="/Mobile" element={<Mobile />} />
-//         </Routes>
-//       </BrowserRouter>
-//     </>
-//   );
-// }
-
-// export default App;
-
 import React from "react";
 import "./App.css";
 import About from "./components/About";
