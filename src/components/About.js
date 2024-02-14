@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import myimage from "./1.jpg";
 import vision from "./vision.jpg";
 import mision from "./mision.jpg";
-import Navbar from "./Navbar";
 import { Carousel } from "react-bootstrap";
 
 export default function About() {
@@ -91,7 +90,6 @@ export default function About() {
 
   return (
     <>
-      <Navbar />
       <section id="about" className="about">
         <div className="container">
           <div className="row content mt-5">

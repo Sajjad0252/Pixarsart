@@ -11,15 +11,16 @@ import Software from "./components/Software";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Cloud from "./components/Cloud";
+import Ui from "./components/Ui";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route index element={<Home />} />
-          <Route path="/" element={<Navbar></Navbar>} />
-          <Route path="/" element={<Footer></Footer>} />
           <Route path="/About" element={<About />} />
           <Route path="Portfolio" element={<Portfolio />} />
           <Route path="Contact" element={<Contact />} />
@@ -27,7 +28,10 @@ function App() {
           <Route path="Web" element={<Web />} />
           <Route path="Devops" element={<Devops />} />
           <Route path="Software" element={<Software />} />
+          <Route path="Cloud" element={<Cloud />} />
+          <Route path="Ui" element={<Ui />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

@@ -20,12 +20,9 @@ import exp from "./exp.gif";
 import grow from "./grow.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./slider.css";
-import Navbar from "./Navbar";
 
 export default function Web() {
   const handleButtonClick = () => {
-    // Add your custom logic here before navigating to Contact page
-
     console.log("Button clicked!");
   };
   const buttonStyle = {
@@ -102,7 +99,6 @@ export default function Web() {
 
   return (
     <>
-      <Navbar />
       <section className="web" style={{ backgroundColor: "lightwhite" }}>
         <div className="container m-2 rounded">
           <div className="row content">

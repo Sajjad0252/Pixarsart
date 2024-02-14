@@ -11,7 +11,7 @@ import l from "./l.png";
 import pic from "./neew.png";
 import hire from "./hire.jpg";
 import Sliderfile from "./Sliderfile";
-import Navbar from "./Navbar";
+
 import snap from "./f1.jpg";
 import grow from "./f2.jpg";
 import dev from "./f3.jpg";
@@ -264,7 +264,6 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
       <section id="hero" className="d-flex align-items-center">
         <div
           className="container text-center position-relative"

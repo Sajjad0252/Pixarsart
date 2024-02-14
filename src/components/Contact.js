@@ -8,7 +8,7 @@ import webc1 from "./con1.jpg";
 import mobc1 from "./mobc1.jpg";
 import sof from "./con2.jpg";
 import devo from "./con3.jpg";
-import Navbar from "./Navbar";
+
 import axios from "axios";
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -72,7 +72,6 @@ export default function Contact() {
 
   return (
     <>
-      <Navbar />
       <div className="row">
         <div className="col-6 ">
           <div className="m-2 mt-5 ">

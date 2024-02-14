@@ -10,7 +10,6 @@ import dev from "./dev.jpg";
 import project from "./project.jpg";
 import establish from "./establish.png";
 import office from "./office.jpg";
-import Navbar from "./Navbar";
 
 export default function Portfolio() {
   const handleButtonClick = () => {
@@ -18,7 +17,6 @@ export default function Portfolio() {
   };
   return (
     <>
-      <Navbar />
       <section id="hero" className="d-flex align-items-center">
         <div
           className="container text-center position-relative"

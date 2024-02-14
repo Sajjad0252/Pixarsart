@@ -21,11 +21,7 @@ import icon4 from "./dev4.svg";
 import icon5 from "./dev5.svg";
 import icon6 from "./dev6.svg";
 
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-
 export default function Devops() {
-  <Footer />;
   const handleButtonClick = () => {
     console.log("Button clicked!");
   };
@@ -59,11 +55,11 @@ export default function Devops() {
 
   const sliderContainerStyle = {
     position: "relative",
-    width: "300px", // Adjust the width as needed
-    margin: "0 auto", // Center the slider
+    width: "300px",
+    margin: "0 auto",
     overflow: "hidden",
-    border: "1px solid #ddd", // Add border for aesthetics
-    borderRadius: "8px", // Optional: Add border radius
+    border: "1px solid #ddd",
+    borderRadius: "8px",
   };
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -159,8 +155,6 @@ export default function Devops() {
 
   return (
     <>
-      <Navbar />
-
       <style>
         {`
           .col-hover:hover {

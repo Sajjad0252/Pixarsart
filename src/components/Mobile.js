@@ -1,24 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import dev from "./mobpage.png";
-import d from "./fin.gif";
-import d1 from "./travel.gif";
-import d2 from "./ecom.gif";
-import d3 from "./health.gif";
-import d4 from "./education.gif";
-
 import back from "./back.gif";
 import front from "./front.gif";
-import services from "./services.gif";
 import manag from "./manag.gif";
-import quality from "./quality.gif";
-import snap from "./snap.png";
 import "./my.css";
 import project from "./project.gif";
-import success from "./success.gif";
-import engineer from "./engineer.gif";
 import exp from "./exp.gif";
-import grow from "./grow.jpg";
 import p1 from "./01.jpg";
 import p2 from "./02.jpg";
 import p3 from "./03.jpg";
@@ -27,14 +15,11 @@ import p5 from "./05.jpg";
 import p6 from "./06.jpg";
 import share from "./share.svg";
 import hand from "./hand.svg";
-import Navbar from "./Navbar";
 import icon from "./icon.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Mobile() {
   const handleButtonClick = () => {
-    // Add your custom logic here before navigating to Contact page
-
     console.log("Button clicked!");
   };
   const tickStyle = {
@@ -94,14 +79,13 @@ export default function Mobile() {
           ) || 0;
         svgRef.current.style.transform = `rotate(${rotation + 1}deg)`;
       }
-    }, 30); // Adjust the interval duration as needed
+    }, 30);
 
     return () => clearInterval(rotateInterval);
   }, []);
 
   return (
     <>
-      <Navbar />
       <section className="web" style={{ backgroundColor: "#f0f0f0" }}>
         <div className="container m-2 rounded">
           <div className="row content">
@@ -247,8 +231,8 @@ export default function Mobile() {
           <div className="row ">
             <div className="col col-hover border mx-3 mb-4 rounded col-bg">
               <img
-                className="mt-4"
-                src={icon}
+                className="mt-4 rounded"
+                src={p1}
                 alt="Animated1"
                 style={{ width: "50px", height: "50px" }}
               ></img>
@@ -281,7 +265,7 @@ export default function Mobile() {
           <div className="row ">
             <div className="col col-hover border mx-3 mb-4 rounded col-bg">
               <img
-                className="mt-4"
+                className="mt-4 rounded"
                 src={p3}
                 alt="Animated1"
                 style={{ width: "50px", height: "50px" }}
@@ -317,7 +301,7 @@ export default function Mobile() {
               style={{ marginRight: "2px" }}
             >
               <img
-                className="mt-4"
+                className="mt-4 rounded"
                 src={p5}
                 alt="Animated1"
                 style={{ width: "50px", height: "50px" }}

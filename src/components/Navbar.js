@@ -12,14 +12,10 @@ export default function Navbar() {
     setShowDropdown(true);
   };
 
-  const handleMouseLeave = () => {
-    // Comment out the line below to close the dropdown on mouse leave
-    // setShowDropdown(false);
-  };
+  const handleMouseLeave = () => {};
 
   const handleSelect = (value) => {
     setSelectedValue(value);
-    // Additional logic if needed with the selected value
   };
 
   const handleDropdownClick = () => {
@@ -87,7 +83,7 @@ export default function Navbar() {
                     style={{
                       display: "flex",
                       flexWrap: "wrap",
-                      width: "400px", // Set the desired width
+                      width: "400px",
                       margin: "15px",
                     }}
                   >
@@ -97,10 +93,10 @@ export default function Navbar() {
                     <Dropdown.Item href="/Mobile" style={{ width: "50%" }}>
                       Mobile Development
                     </Dropdown.Item>
-                    <Dropdown.Item href="/" style={{ width: "50%" }}>
+                    <Dropdown.Item href="Ui" style={{ width: "50%" }}>
                       UI UX Designer
                     </Dropdown.Item>
-                    <Dropdown.Item href="#/action-1" style={{ width: "50%" }}>
+                    <Dropdown.Item href="/Cloud" style={{ width: "50%" }}>
                       Cloud Services
                     </Dropdown.Item>
                     <Dropdown.Item href="/Devops" style={{ width: "50%" }}>
