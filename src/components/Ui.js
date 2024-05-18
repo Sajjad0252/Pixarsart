@@ -1,39 +1,34 @@
-import web from "./clod/Ui.svg";
-import ui2 from "./clod/ui2.svg";
-import dev2 from "./dev2.svg";
-import dev3 from "./dev3.svg";
-import dev4 from "./dev4.svg";
-import dev6 from "./dev6.svg";
-import icon1 from "./dev1.svg";
-import icon2 from "./dev2.svg";
-import icon3 from "./dev3.svg";
-import icon4 from "./dev4.svg";
+import web from "./img/Ui.svg";
+import ui2 from "./img/ui2.svg";
+import dev2 from "./img/dev2.svg";
+import dev3 from "./img/dev3.svg";
+import dev4 from "./img/dev4.svg";
+import dev6 from "./img/dev6.svg";
+import icon1 from "./img/dev1.svg";
+import icon2 from "./img/dev2.svg";
+import icon3 from "./img/dev3.svg";
+import icon4 from "./img/dev4.svg";
 import "./slider.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 export default function Ui() {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  const handleHover = () => {
-    setIsFlipped(!isFlipped);
-  };
-
   const handleButtonClick = () => {
     console.log("Button clicked!");
   };
 
   return (
     <>
-      <section className="web">
-        <div className="container m-2 rounded">
+      <section className="web mt-5 ">
+        <div className="bg-primary fixed-top">
+          <Navbar />
+        </div>
+        <div className="container   rounded">
           <div className="row content">
-            <div
-              className="col-lg-6 mt-5"
-              data-aos="fade-right"
-              data-aos-delay="100"
-            >
+            <div className="col mt-5">
               <h1>Top UI/UX Design Services</h1>
               <p className="" style={{ textDecorationColor: "black" }}>
                 <ul className="" style={{ textDecorationColor: "blue" }}>
@@ -75,11 +70,7 @@ export default function Ui() {
                 </nav>
               </button>
             </div>
-            <div
-              className="col-lg-6"
-              data-aos="fade-right"
-              data-aos-delay="100"
-            >
+            <div className="col">
               <img
                 src={web}
                 style={{ width: "100%" }}
@@ -104,6 +95,7 @@ export default function Ui() {
               <img
                 className="m-2 mt-3"
                 src={icon1}
+                alt=""
                 style={{ width: "20%", height: "20%" }}
               />
               <h4 className="mt-2">Mobile App UI/UX Design</h4>
@@ -117,6 +109,7 @@ export default function Ui() {
               <img
                 className="m-2 mt-3"
                 src={icon2}
+                alt=""
                 style={{ width: "20%", height: "20%" }}
               />
               <h4 className="mt-2">Web UI/UX Design</h4>
@@ -130,6 +123,7 @@ export default function Ui() {
               <img
                 className="m-2 mt-3"
                 src={icon3}
+                alt=""
                 style={{ width: "20%", height: "20%" }}
               />
               <h4 className="mt-2">UI/UX Brand Identity</h4>
@@ -143,6 +137,7 @@ export default function Ui() {
               <img
                 className="m-2 mt-3"
                 src={icon4}
+                alt=""
                 style={{ width: "20%", height: "20%" }}
               />
               <h4 className="mt-2">HCI Design</h4>
@@ -250,6 +245,8 @@ export default function Ui() {
           <img src={ui2} alt="UI/UX Process" />
         </div>
       </section>
+
+      <Footer />
     </>
   );
 }

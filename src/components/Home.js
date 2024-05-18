@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import svg from "./ai.png";
-import svg1 from "./web.png";
-import svg2 from "./mobile.png";
-import svg3 from "./devop.png";
-import svg4 from "./game.png";
-import svg5 from "./blockchain.png";
-import ill from "./ill.png";
-import l from "./l.png";
-import pic from "./neew.png";
-import hire from "./hire.jpg";
+import { Link, useLocation } from "react-router-dom";
+import svg from "./img/ai.png";
+import svg1 from "./img/web.png";
+import svg2 from "./img/mobile.png";
+import svg3 from "./img/devop.png";
+import svg4 from "./img/game.png";
+import svg5 from "./img/blockchain.png";
+import ill from "./img/ill.png";
+import hire from "./img/hire.jpg";
 import Sliderfile from "./Sliderfile";
-
-import snap from "./f1.jpg";
-import grow from "./f2.jpg";
-import dev from "./f3.jpg";
-import re from "./react.jpeg";
-import py from "./python.jpeg";
-import no from "./node.jpeg";
-import mo from "./mongo.jpeg";
-import ja from "./java.jpeg";
-import ko from "./kotlin.jpeg";
-import js from "./js.jpeg";
+import snap from "./img/f1.jpg";
+import grow from "./img/f2.jpg";
+import dev from "./img/f3.jpg";
+import re from "./img/react.jpeg";
+import py from "./img/python.jpeg";
+import no from "./img/node.jpeg";
+import mo from "./img/mongo.jpeg";
+import ja from "./img/java.jpeg";
+import ko from "./img/kotlin.jpeg";
+import js from "./img/js.jpeg";
+import Navbar from "./Navbar";
+import bg from "./img/bg1.mp4";
+import Footer from "./Footer";
 
 export default function Home() {
   const handleButtonClick = () => {
@@ -139,7 +139,7 @@ export default function Home() {
       case 4:
         return (
           <>
-            <div className="container  ">
+            <div className="container">
               <h2 className="">DevOps Development</h2>
               <p className="">
                 DevOps combines development (Dev) and operations (Ops) to unite
@@ -162,7 +162,7 @@ export default function Home() {
       case 5:
         return (
           <>
-            <div className="container  ">
+            <div className="container">
               <h2 className="">UI/UX Development</h2>
               <p className="">
                 WebIn this course, we’ll cover the theory and methodologies
@@ -253,44 +253,77 @@ export default function Home() {
     };
   }, [autoSlideInterval]);
 
-  const tickStyle = {
-    color: "white",
-    backgroundColor: "#1260CC",
-    borderRadius: "50%",
-    padding: "5px",
-    marginRight: "13px",
-    border: "none",
+  const [scrolling, setScrolling] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    setScrolling(false); // Reset scrolling state when location changes
+  }, [location]);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0 && shouldApplyScrollEffect(location.pathname)) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
+  const shouldApplyScrollEffect = (pathname) => {
+    const effectPaths = ["/", "/Portfolio"];
+    return effectPaths.includes(pathname);
   };
 
   return (
     <>
-      <section id="hero" className="d-flex align-items-center">
-        <div
-          className="container text-center position-relative"
-          data-aos="fade-in"
-          data-aos-delay="200"
-        >
-          <h1>
-            Software Development Consulting
-            <br /> For Next-Gen Solutions
-          </h1>
-          <h2>Enterprises * Innovators * Startups</h2>
-          <button
-            className="btn btn-lg bg-warning text-white rounded-pill m-2 "
-            type="button"
-            style={{ height: "100%" }}
-            onClick={handleButtonClick}
+      <section id="hero" className="">
+        <div className="video-container">
+          <video autoPlay muted loop className="video-background">
+            <source src={bg} type="video/mp4" />
+          </video>
+          <div
+            className={`container-fluid text-center ${
+              shouldApplyScrollEffect(location.pathname) && scrolling
+                ? "bg-primary"
+                : ""
+            } text-black`}
           >
-            <nav>
-              <Link
-                to="/Contact"
-                state={{}}
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                Request a free consultation
-              </Link>
-            </nav>
-          </button>
+            {" "}
+            <Navbar />
+          </div>
+          <div
+            className="container text-center position-relative content-overlay mt-5"
+            data-aos="fade-in"
+            data-aos-delay="200"
+          >
+            <h1 className="mt-5">
+              Software Development Consulting
+              <br /> For Next-Gen Solutions
+            </h1>
+            <h2>Enterprises &bull; Innovators &bull; Startups</h2>
+
+            <button
+              className="btn btn-lg bg-warning text-white rounded-pill m-2 "
+              type="button"
+              style={{ height: "100%" }}
+              onClick={handleButtonClick}
+            >
+              <nav>
+                <Link
+                  to="/Contact"
+                  state={{}}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  Request a free consultation
+                </Link>
+              </nav>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -306,13 +339,13 @@ export default function Home() {
         </h1>
         <p>with the perfect blend of technology, expertise and innovation.</p>
       </div>
-      {/* showing right but not working */}
+
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-6 ">
             <div className="row ">
               <div
-                className="col rounded m-2 text-black border text-center d-flex flex-column align-items-center justify-content-center "
+                className="col rounded m-2 text-black  text-center d-flex flex-column align-items-center justify-content-center "
                 style={getColStyle(0)}
                 onClick={() => handleClick(0)}
               >
@@ -320,7 +353,7 @@ export default function Home() {
                 <p>Software Development</p>
               </div>
               <div
-                className="col rounded m-2 border text-black text-center  d-flex flex-column align-items-center justify-content-center "
+                className="col rounded m-2 text-black text-center  d-flex flex-column align-items-center justify-content-center "
                 style={getColStyle(1)}
                 onClick={() => handleClick(1)}
               >
@@ -328,7 +361,7 @@ export default function Home() {
                 <p>Web Application Development</p>
               </div>
               <div
-                className="col rounded m-2 border text-black text-center  d-flex flex-column align-items-center justify-content-center"
+                className="col rounded m-2 text-black text-center  d-flex flex-column align-items-center justify-content-center"
                 style={getColStyle(2)}
                 onClick={() => handleClick(2)}
               >
@@ -339,7 +372,7 @@ export default function Home() {
 
             <div className="row ">
               <div
-                className="col rounded m-2 text-black border text-center d-flex flex-column align-items-center justify-content-center "
+                className="col rounded m-2 text-black  text-center d-flex flex-column align-items-center justify-content-center "
                 style={getColStyle(3)}
                 onClick={() => handleClick(3)}
               >
@@ -347,7 +380,7 @@ export default function Home() {
                 <p>Cloud Services Development</p>
               </div>
               <div
-                className="col rounded m-2 border text-black text-center  d-flex flex-column align-items-center justify-content-center "
+                className="col rounded m-2  text-black text-center  d-flex flex-column align-items-center justify-content-center "
                 style={getColStyle(4)}
                 onClick={() => handleClick(4)}
               >
@@ -355,7 +388,7 @@ export default function Home() {
                 <p>DevOps Development</p>
               </div>
               <div
-                className="col rounded m-2 border text-black text-center  d-flex flex-column align-items-center justify-content-center"
+                className="col rounded m-2  text-black text-center  d-flex flex-column align-items-center justify-content-center"
                 style={getColStyle(5)}
                 onClick={() => handleClick(5)}
               >
@@ -368,9 +401,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="col-6 border " style={{ backgroundColor: "#D8D8D8" }}>
+          <div className="col-6 " style={{ backgroundColor: "#D8D8D8" }}>
             <div
-              className="col rounded m-2 border text-black text-center"
+              className="col rounded m-2  text-black text-center"
               style={getColStyle(selectedColumn)}
               onClick={() => handleClick(null)}
             >
@@ -405,7 +438,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container border mt-5">
+      <div className="container mt-5">
         <Sliderfile />
       </div>
 
@@ -709,6 +742,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

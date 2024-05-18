@@ -1,46 +1,92 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import animated from "./a.jpg";
-import animated1 from "./c.jpg";
-import animated2 from "./homepie.png";
-import animated3 from "./sheild.png";
-import animated4 from "./stitch.png";
-import client from "./client.jpg";
-import dev from "./dev.jpg";
-import project from "./project.jpg";
-import establish from "./establish.png";
-import office from "./office.jpg";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import animated from "./img/a.jpg";
+import animated1 from "./img/c.jpg";
+import animated2 from "./img/homepie.png";
+import animated3 from "./img/sheild.png";
+import animated4 from "./img/stitch.png";
+import client from "./img/client.jpg";
+import dev from "./img/dev.jpg";
+import project from "./img/project.jpg";
+import establish from "./img/establish.png";
+import office from "./img/office.jpg";
+import bg from "./img/bg1.mp4";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 export default function Portfolio() {
   const handleButtonClick = () => {
     console.log("Button clicked!");
   };
+
+  const [scrolling, setScrolling] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    setScrolling(false); // Reset scrolling state when location changes
+  }, [location]);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0 && shouldApplyScrollEffect(location.pathname)) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
+  const shouldApplyScrollEffect = (pathname) => {
+    // Define the paths where you want the scroll effect
+    const effectPaths = ["/", "/Portfolio"];
+    return effectPaths.includes(pathname);
+  };
+
   return (
     <>
-      <section id="hero" className="d-flex align-items-center">
-        <div
-          className="container text-center position-relative"
-          data-aos="fade-in"
-          data-aos-delay="200"
-        >
-          <h1>Software Development Solutions</h1>
-          <h2>We are team of talented mobile and web developers</h2>
-          <button
-            className="btn btn-lg border-white text-white rounded-pill m-2 "
-            type="button"
-            style={{ height: "10%" }}
-            onClick={handleButtonClick}
+      <section id="hero" className="">
+        <div className="video-container">
+          <video autoPlay muted loop className="video-background">
+            <source src={bg} type="video/mp4" />
+          </video>
+          <div
+            className={`container-fluid text-center ${
+              shouldApplyScrollEffect(location.pathname) && scrolling
+                ? "bg-primary"
+                : ""
+            } text-black`}
           >
-            <nav>
-              <Link
-                to="/Contact"
-                state={{}}
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                Get Started
-              </Link>
-            </nav>
-          </button>
+            {" "}
+            <Navbar />
+          </div>
+          <div
+            className="container text-center position-relative mt-5 "
+            data-aos="fade-in"
+            data-aos-delay="200"
+          >
+            <h1 className="mt-5">Software Development Solutions</h1>
+            <h2>We are team of talented mobile and web developers</h2>
+            <button
+              className="btn btn-lg border-white text-white rounded-pill m-2 "
+              type="button"
+              style={{ height: "10%" }}
+              onClick={handleButtonClick}
+            >
+              <nav>
+                <Link
+                  to="/Contact"
+                  state={{}}
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  Get Started
+                </Link>
+              </nav>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -289,6 +335,7 @@ export default function Portfolio() {
           </button>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

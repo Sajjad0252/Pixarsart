@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-import myimage from "./1.jpg";
-import vision from "./vision.jpg";
-import mision from "./mision.jpg";
+import myimage from "./img/1.jpg";
+import vision from "./img/vision.jpg";
+import mision from "./img/mision.jpg";
+import Navbar from "./Navbar";
 import { Carousel } from "react-bootstrap";
+import Footer from "./Footer";
+import "./my.css";
 
 export default function About() {
   const [count, setCount] = useState(1);
@@ -90,11 +93,14 @@ export default function About() {
 
   return (
     <>
-      <section id="about" className="about">
-        <div className="container">
+      <section className="about mt-5">
+        <div className="bg-primary fixed-top">
+          <Navbar className="bg-primary" />
+        </div>
+        <div className="container mt-5">
           <div className="row content mt-5">
             <div
-              className="col-lg-6"
+              className="col-lg-6 mt-5"
               data-aos="fade-right"
               data-aos-delay="100"
             >
@@ -109,7 +115,7 @@ export default function About() {
             </div>
 
             <div
-              class="col-lg-6 pt-4 pt-lg-0"
+              class="col-lg-6 pt-4 mt-5 pt-lg-0"
               data-aos="fade-left"
               data-aos-delay="200"
             >
@@ -126,7 +132,7 @@ export default function About() {
         </div>
       </section>
 
-      <section id="about" className="about">
+      <section className="about">
         <div className="container">
           <div className="row content mt-5">
             <div
@@ -167,7 +173,7 @@ export default function About() {
         </div>
       </section>
 
-      <section id="about" className="about">
+      <section className="about">
         <div className="container">
           <div className="row content mt-5">
             <div
@@ -305,6 +311,7 @@ export default function About() {
           </p>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

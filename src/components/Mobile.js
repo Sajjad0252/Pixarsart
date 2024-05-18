@@ -1,23 +1,24 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import dev from "./mobpage.png";
-import back from "./back.gif";
-import front from "./front.gif";
-import manag from "./manag.gif";
+import dev from "./img/mobpage.png";
+import back from "./img/back.gif";
+import front from "./img/front.gif";
+import manag from "./img/manag.gif";
 import "./my.css";
-import project from "./project.gif";
-import exp from "./exp.gif";
-import p1 from "./01.jpg";
-import p2 from "./02.jpg";
-import p3 from "./03.jpg";
-import p4 from "./04.jpg";
-import p5 from "./05.jpg";
-import p6 from "./06.jpg";
-import share from "./share.svg";
-import hand from "./hand.svg";
-import icon from "./icon.svg";
+import project from "./img/project.gif";
+import exp from "./img/exp.gif";
+import p1 from "./img/01.jpg";
+import p2 from "./img/02.jpg";
+import p3 from "./img/03.jpg";
+import p4 from "./img/04.jpg";
+import p5 from "./img/05.jpg";
+import p6 from "./img/06.jpg";
+import share from "./img/share.svg";
+import hand from "./img/hand.svg";
+import icon from "./img/icon.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 export default function Mobile() {
   const handleButtonClick = () => {
     console.log("Button clicked!");
@@ -86,7 +87,10 @@ export default function Mobile() {
 
   return (
     <>
-      <section className="web" style={{ backgroundColor: "#f0f0f0" }}>
+      <section className="web mt-5" style={{ backgroundColor: "#f0f0f0" }}>
+        <div className="bg-primary fixed-top">
+          <Navbar />
+        </div>
         <div className="container m-2 rounded">
           <div className="row content">
             <div
@@ -94,7 +98,7 @@ export default function Mobile() {
               data-aos="fade-right"
               data-aos-delay="100"
             >
-              <h1>Mobile Application Development Services</h1>
+              <h1 className="mt-5">Mobile Application Development Services</h1>
               <p>
                 We are a leading mobile app development company in the USA,
                 housing domain-savvy developers to design and develop Android,
@@ -123,7 +127,7 @@ export default function Mobile() {
               <img
                 src={dev}
                 style={{ width: "100%" }}
-                className="m-2"
+                className="mt-5"
                 alt="Description"
               />
             </div>
@@ -133,10 +137,7 @@ export default function Mobile() {
 
       <section className="dynamic">
         <div className="container">
-          <h1
-            className="text-center
-          "
-          >
+          <h1 className="text-center">
             A Sneak Peak of Our Custom Mobile App Development Services
           </h1>
           <p className="text-center">
@@ -145,7 +146,7 @@ export default function Mobile() {
           </p>
           <div className="row">
             <div className="col col-hover border m-2">
-              <img src={exp} style={{ height: "20%", width: "20%" }}></img>
+              <img src={exp} style={{ height: "20%", width: "20%" }} />
               <h4 className="mt-2">Android App Development</h4>
               <p>
                 Hire our remote team of android developers to create
@@ -154,7 +155,7 @@ export default function Mobile() {
               </p>
             </div>
             <div className="col col-hover border m-2">
-              <img src={front} style={{ height: "20%", width: "20%" }}></img>
+              <img src={front} style={{ height: "20%", width: "20%" }} />
               <h4 className="mt-2">iOS App Development</h4>
               <p>
                 Discover a constellation of star iOS developers at InvoZone, a
@@ -163,7 +164,7 @@ export default function Mobile() {
               </p>
             </div>
             <div className="col col-hover border m-2">
-              <img src={back} style={{ height: "20%", width: "20%" }}></img>
+              <img src={back} style={{ height: "20%", width: "20%" }} />
               <h4 className="mt-2">React Native App Development</h4>
               <p>
                 Outsource from a booming community of smartphone app developers
@@ -172,10 +173,9 @@ export default function Mobile() {
               </p>
             </div>
           </div>
-          <div className="row">
+          <div className="row justify-content-center">
             <div className="col col-hover border m-2">
-              <img src={project} style={{ height: "20%", width: "20%" }}></img>
-
+              <img src={project} style={{ height: "20%", width: "20%" }} />
               <h4 className="mt-2">Hybrid App Development</h4>
               <p>
                 Witness your business reaching out to a broader customer base
@@ -184,8 +184,7 @@ export default function Mobile() {
               </p>
             </div>
             <div className="col col-hover border m-2">
-              <img src={manag} style={{ height: "20%", width: "20%" }}></img>
-
+              <img src={manag} style={{ height: "20%", width: "20%" }} />
               <h4 className="mt-2">Cross App Development</h4>
               <p>
                 Avoid limitations by scheduling a 7-day trial for our
@@ -331,6 +330,15 @@ export default function Mobile() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="d-flex  mt-5 section-bg">
+        <div
+          className="container position-relative"
+          data-aos="fade-in"
+          data-aos-delay="200"
+        >
           <div
             className="row"
             style={{
@@ -410,7 +418,7 @@ export default function Mobile() {
           </div>
         </div>
       </section>
-      <section className=""></section>
+      <Footer />
     </>
   );
 }

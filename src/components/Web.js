@@ -1,38 +1,31 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import dev from "./webdev.png";
-import d from "./fin.gif";
-import d1 from "./travel.gif";
-import d2 from "./ecom.gif";
-import d3 from "./health.gif";
-import d4 from "./education.gif";
-import back from "./back.gif";
-import front from "./front.gif";
-import services from "./services.gif";
-import manag from "./manag.gif";
-import quality from "./quality.gif";
-import snap from "./snap.png";
+import dev from "./img/webdev.png";
+import d from "./img/fin.gif";
+import d1 from "./img/travel.gif";
+import d2 from "./img/ecom.gif";
+import d3 from "./img/health.gif";
+import d4 from "./img/education.gif";
+import back from "./img/back.gif";
+import front from "./img/front.gif";
+import services from "./img/services.gif";
+import manag from "./img/manag.gif";
+import quality from "./img/quality.gif";
+import snap from "./img/snap.png";
 import "./my.css";
-import project from "./project.gif";
-import success from "./success.gif";
-import engineer from "./engineer.gif";
-import exp from "./exp.gif";
-import grow from "./grow.jpg";
+import project from "./img/project.gif";
+import success from "./img/success.gif";
+import engineer from "./img/engineer.gif";
+import exp from "./img/exp.gif";
+import grow from "./img/grow.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./slider.css";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 export default function Web() {
   const handleButtonClick = () => {
     console.log("Button clicked!");
-  };
-  const buttonStyle = {
-    position: "absolute",
-    top: "50%",
-    fontSize: "20px",
-    background: "none",
-    border: "none",
-    cursor: "pointer",
-    color: "#333",
   };
 
   const tickStyle = {
@@ -99,15 +92,18 @@ export default function Web() {
 
   return (
     <>
-      <section className="web" style={{ backgroundColor: "lightwhite" }}>
-        <div className="container m-2 rounded">
-          <div className="row content">
+      <section className="web mt-5" style={{ backgroundColor: "#f0f0f0" }}>
+        <div className="bg-primary fixed-top">
+          <Navbar />
+        </div>
+        <div className="container mt-5 rounded">
+          <div className="row content mt-5">
             <div
               className="col-lg-6 mt-5"
               data-aos="fade-right"
               data-aos-delay="100"
             >
-              <h1>Web Application Development Services</h1>
+              <h1 className="mt-5">Web Application Development Services</h1>
               <p>
                 To strengthen your customer retention and enhance your brand's
                 reputation, we develop versatile, highly scalable, and
@@ -128,7 +124,7 @@ export default function Web() {
             </div>
 
             <div
-              className="col-lg-6"
+              className="col-lg-6 mt-5"
               data-aos="fade-right"
               data-aos-delay="100"
             >
@@ -362,9 +358,9 @@ export default function Web() {
         </div>
       </section>
 
-      <section className="d-flex align-items-center mt-5">
+      <section className="mt-5">
         <div
-          className="container text-center position-relative "
+          className="container text-center"
           data-aos="fade-in"
           data-aos-delay="200"
         >
@@ -380,60 +376,56 @@ export default function Web() {
             are:
           </p>
           <div className="row justify-content-center">
-            <div className="col-2 col-hover ">
+            <div className="col-6 col-md-2 mb-3">
               <img
                 className="rounded border"
                 src={d}
                 style={{ width: "100%" }}
                 alt="Animated1"
-              ></img>
+              />
               <h4 className="mt-2">Fintech</h4>
             </div>
-            <div className="col-2">
-              {" "}
+            <div className="col-6 col-md-2 mb-3">
               <img
                 className="rounded border"
                 src={d1}
                 style={{ width: "100%", height: "50%" }}
                 alt="Animated1"
-              ></img>
+              />
               <h4 className="mt-2">Travel & Tourism</h4>
             </div>
-            <div className="col-2">
-              {" "}
+            <div className="col-6 col-md-2 mb-3">
               <img
                 className="rounded border"
                 src={d2}
                 style={{ width: "100%" }}
                 alt="Animated1"
-              ></img>
+              />
               <h4 className="mt-2">e-Commerce</h4>
             </div>
-            <div className="col-2 col-hover">
-              {" "}
+            <div className="col-6 col-md-2 mb-3">
               <img
                 className="rounded border"
                 src={d3}
                 style={{ width: "100%" }}
                 alt="Animated1"
-              ></img>
-              <h4 className="mt-2">Heathcare</h4>
+              />
+              <h4 className="mt-2">Healthcare</h4>
             </div>
-            <div className="col-2 col-hover">
-              {" "}
+            <div className="col-6 col-md-2 mb-3">
               <img
                 className="rounded border"
                 src={d4}
                 style={{ width: "100%" }}
                 alt="Animated1"
-              ></img>
+              />
               <h4 className="mt-2">Education</h4>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="d-flex align-items-center mt-5 ">
+      <section className="d-flex align-items-center mt-5">
         <div
           className="container text-center position-relative"
           data-aos="fade-in"
@@ -450,7 +442,7 @@ export default function Web() {
             our web application development team offers:
           </p>
           <div className="row justify-content-center">
-            <div className="col col-hover border ">
+            <div className="col-10 col-md-4 col-lg-4 col-hover border mb-3">
               <img
                 className=""
                 src={back}
@@ -464,7 +456,7 @@ export default function Web() {
                 everything on time.
               </p>
             </div>
-            <div className="col border ">
+            <div className="col-10 col-md-4 col-lg-4 border mb-3">
               {" "}
               <img
                 className="rounded"
@@ -480,10 +472,10 @@ export default function Web() {
               </p>
             </div>
 
-            <div className="col border ">
+            <div className="col-10 col-md-4 col-lg-4 border mb-3">
               {" "}
               <img
-                className="rounded "
+                className="rounded"
                 src={services}
                 alt="Animated1"
                 style={{ width: "110px", height: "110px" }}
@@ -498,9 +490,10 @@ export default function Web() {
           </div>
 
           <div className="row justify-content-center">
-            <div className="col-4 col-hover border ">
+            <div className="col-10 col-md-4 col-lg-4 border mb-3">
+              {" "}
               <img
-                className="rounded "
+                className="rounded"
                 src={manag}
                 alt="Animated1"
                 style={{ width: "110px", height: "110px" }}
@@ -512,10 +505,10 @@ export default function Web() {
                 any hurdles.
               </p>
             </div>
-            <div className="col-4 border ">
+            <div className="col-10 col-md-4 col-lg-4 border mb-3">
               {" "}
               <img
-                className="rounded "
+                className="rounded"
                 src={quality}
                 style={{ width: "110px", height: "110px" }}
                 alt="Animated1"
@@ -644,59 +637,62 @@ export default function Web() {
       </section>
 
       <section
-        className="counts  rounded mt-5"
+        className="counts rounded mt-5"
         style={{ backgroundColor: "#D8D8D8" }}
       >
         <div className="container content-center">
           <div className="row counters">
-            <div className="col-3 text-center text-black border-top">
+            <div className="col-md-6 col-lg-3 text-center text-black border-top mb-4">
               <img
                 src={project}
                 className="rounded-circle"
                 style={{ width: "50%", height: "50%" }}
+                alt="Project Successfully Delivered"
               ></img>
               <h1 className="mt-2">{count}+</h1>
-
               <h4>Project Successfully Delivered</h4>
             </div>
 
-            <div className="col-3 text-center border text-black">
+            <div className="col-md-6 col-lg-3 text-center border text-black mb-4">
               <img
                 src={success}
                 className="rounded-circle"
                 style={{ width: "50%", height: "50%" }}
+                alt="Client Success Rate"
               ></img>
               <h1 className="mt-2">{count1}+</h1>
               <h4>Client Success Rate</h4>
             </div>
 
-            <div className="col-3 text-center border text-black">
+            <div className="col-md-6 col-lg-3 text-center border text-black mb-4">
               <img
                 src={engineer}
                 className="rounded-circle"
                 style={{ width: "50%", height: "50%" }}
+                alt="Team Of Pre-Vetted Engineers"
               ></img>
               <h1 className="mt-2">{count2}+</h1>
               <h4>Team Of Pre-Vetted Engineers</h4>
             </div>
 
-            <div className="col-3  text-center border text-black">
+            <div className="col-md-6 col-lg-3 text-center border text-black mb-4">
               <img
                 src={exp}
                 className="rounded-circle"
                 style={{ width: "50%", height: "50%" }}
+                alt="Years Of Experience In The IT Industry"
               ></img>
               <h1 className="mt-2">{count3}+</h1>
-              <h4 className="mt-2 ">Years Of Experience In The IT Industry</h4>
+              <h4>Years Of Experience In The IT Industry</h4>
             </div>
           </div>
         </div>
       </section>
 
       <section className="web mt-5">
-        <div className="container m-2 rounded ">
+        <div className="container m-2 rounded">
           <div className="row content">
-            <div className="col-6   mt-3 rounded">
+            <div className="col-md-6 mt-3 rounded">
               <h1>Extend The Roots Of Your Business By Choosing Us</h1>
               <p className="mb-4 mt-4">
                 We upgrade the quality and extend the functionalities of our web
@@ -708,42 +704,38 @@ export default function Web() {
               </p>
 
               <ul className="list-group">
-                <li className="list-group-item">
+                <li className="list-group-item" style={{ border: "none" }}>
                   <span style={tickStyle}>&#10003;</span> We find the best
-                  technology stack for you that matches your needs
+                  technology stack for you that matches
                 </li>
-                <li className="list-group-item">
+                <li className="list-group-item" style={{ border: "none" }}>
                   <span style={tickStyle}>&#10003;</span> Our non-stop
                   availability makes communication easier
                 </li>
-                <li className="list-group-item">
+                <li className="list-group-item" style={{ border: "none" }}>
                   <span style={tickStyle}>&#10003;</span> We put much focus on
                   agile development processes
                 </li>
-                <li className="list-group-item">
+                <li className="list-group-item" style={{ border: "none" }}>
                   <span style={tickStyle}>&#10003;</span> Freely connect with
                   the project manager in case of any hurdle
                 </li>
-                <li className="list-group-item">
+                <li className="list-group-item" style={{ border: "none" }}>
                   <span style={tickStyle}>&#10003;</span> We strictly adhere to
                   globally accepted data security guidelines
                 </li>
-                <li className="list-group-item">
+                <li className="list-group-item" style={{ border: "none" }}>
                   <span style={tickStyle}>&#10003;</span> Full-fledge
                   documentation at every step of the process
                 </li>
-                <li className="list-group-item">
+                <li className="list-group-item" style={{ border: "none" }}>
                   <span style={tickStyle}>&#10003;</span> Interactive and
                   dependable UI/UX designs
-                </li>
-                <li className="list-group-item">
-                  <span style={tickStyle}>&#10003;</span> Frequent iterative
-                  testing
                 </li>
               </ul>
             </div>
 
-            <div className="col-6">
+            <div className="col-md-6">
               <img
                 src={grow}
                 style={{ width: "100%" }}
@@ -785,6 +777,7 @@ export default function Web() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

@@ -1,22 +1,24 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import ai from "./ai.jpg";
-import map from "./map.svg";
-import web from "./soft/web.jpeg";
-import mobile from "./soft/mobile.jpeg";
-import devops from "./soft/devops.jpeg";
-import dev1 from "./dev1.svg";
-import dev2 from "./dev2.svg";
-import dev3 from "./dev3.svg";
-import dev4 from "./dev4.svg";
-import dev5 from "./dev5.svg";
-import dev6 from "./dev6.svg";
+import ai from "./img/ai.jpg";
+import map from "./img/map.svg";
+import web from "./img/web.jpeg";
+import mobile from "./img/mobile.jpeg";
+import devops from "./img/devops.jpeg";
+import dev1 from "./img/dev1.svg";
+import dev2 from "./img/dev2.svg";
+import dev3 from "./img/dev3.svg";
+import dev4 from "./img/dev4.svg";
+import dev5 from "./img/dev5.svg";
+import dev6 from "./img/dev6.svg";
 
-import cloud from "./soft/cloud.png";
-import soft from "./softpage.svg";
-import soft1 from "./softpage1.svg";
+import cloud from "./img/cloud.png";
+import soft from "./img/softpage.svg";
+import soft1 from "./img/softpage1.svg";
 import "./slider.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 export default function Software() {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -29,18 +31,18 @@ export default function Software() {
   };
   return (
     <>
-      <section
-        className="web"
-        style={{ backgroundColor: "#f0f0f0", backgroundImage: { ai } }}
-      >
-        <div className="container m-2 rounded">
+      <section className="web mt-5" style={{ backgroundColor: "#f0f0f0" }}>
+        <div className="bg-primary fixed-top">
+          <Navbar />
+        </div>
+        <div className="container margin-auto rounded">
           <div className="row content">
             <div
               className="col-lg-6 mt-5"
               data-aos="fade-right"
               data-aos-delay="100"
             >
-              <h1>Custom Software Development Services</h1>
+              <h1 className="mt-5">Custom Software Development Services</h1>
               <p>
                 Designing, building, deploying, and maintaining custom software
                 products tailored to the specific needs of your business
@@ -73,14 +75,14 @@ export default function Software() {
             </div>
 
             <div
-              className="col-lg-6"
+              className="col-lg-6 mt-5"
               data-aos="fade-right"
               data-aos-delay="100"
             >
               <img
                 src={soft}
                 style={{ width: "100%" }}
-                className="m-2"
+                className="mt-5"
                 alt="Description"
               />
             </div>
@@ -295,10 +297,10 @@ export default function Software() {
       </div>
 
       <section className="web mt-5 mb-5">
-        <div className="container m-2 rounded">
+        <div className="container rounded">
           <div className="row content">
             <div
-              className="col-lg-6 mt-5 "
+              className="col-6 mt-5 "
               style={{
                 backgroundColor: "#f0f0f0",
                 borderRadius: "60px 60px 140px 140px",
@@ -321,11 +323,7 @@ export default function Software() {
               </p>
             </div>
 
-            <div
-              className="col-lg-6"
-              data-aos="fade-right"
-              data-aos-delay="100"
-            >
+            <div className="col-6" data-aos="fade-right" data-aos-delay="100">
               <img
                 src={soft1}
                 style={{ width: "100%" }}
@@ -675,7 +673,25 @@ export default function Software() {
             >
               <div>
                 <h4 style={{ marginBottom: "10px" }}>Ready to get Started</h4>
-                <button className="btn btn-primary">Contact Our Expert</button>
+                <button
+                  className="btn btn-lg bg-primary text-white rounded-pill m-2 "
+                  type="button"
+                  onClick={handleButtonClick}
+                >
+                  <nav>
+                    <Link
+                      to="/Contact"
+                      state={{}}
+                      style={{
+                        textDecoration: "none",
+                        color: "white",
+                        marginBottom: "5px",
+                      }}
+                    >
+                      Conatct our expert
+                    </Link>
+                  </nav>
+                </button>
               </div>
             </div>
           </div>
@@ -830,6 +846,8 @@ export default function Software() {
         </h1>
         <img src={map}></img>
       </div>
+
+      <Footer />
     </>
   );
 }

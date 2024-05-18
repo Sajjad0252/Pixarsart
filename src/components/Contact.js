@@ -2,14 +2,17 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ui from "./ui.jpg";
-import cloud from "./cloud.jpg";
-import webc1 from "./con1.jpg";
-import mobc1 from "./mobc1.jpg";
-import sof from "./con2.jpg";
-import devo from "./con3.jpg";
+import ui from "./img/ui.jpg";
+import cloud from "./img/cloud.jpg";
+import webc1 from "./img/con1.jpg";
+import mobc1 from "./img/mobc1.jpg";
+import sof from "./img/con2.jpg";
+import devo from "./img/con3.jpg";
+import Navbar from "./Navbar";
 
 import axios from "axios";
+import Footer from "./Footer";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -73,7 +76,11 @@ export default function Contact() {
   return (
     <>
       <div className="row">
-        <div className="col-6 ">
+        <div className="bg-primary fixed-top">
+          <Navbar className="bg-primary" />
+        </div>
+
+        <div className="col-6 mt-5">
           <div className="m-2 mt-5 ">
             <h1>We Got Your Back</h1>
             <h4 className="mt-2">
@@ -161,7 +168,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="col-6 border rounded mt-5">
+        <div className="col-6  rounded mt-5">
           <Slider {...sliderSettings} className="slider-container">
             <div>
               <img
@@ -216,6 +223,7 @@ export default function Contact() {
       </div>
 
       <div />
+      <Footer />
     </>
   );
 }

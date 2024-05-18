@@ -1,25 +1,27 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import dev from "./dev.svg";
-import dev2 from "./devop2.png";
-import dev3 from "./devop3.svg";
-import dev4 from "./devop4.svg";
+import dev from "./img/dev.svg";
+import dev2 from "./img/devop2.png";
+import dev3 from "./img/devop3.svg";
+import dev4 from "./img/devop4.svg";
 
-import snap from "./snap.png";
+import snap from "./img/snap.png";
 import "./my.css";
-import project from "./project.gif";
-import success from "./success.gif";
-import engineer from "./engineer.gif";
-import exp from "./exp.gif";
-import grow from "./grow.jpg";
+import project from "./img/project.gif";
+import success from "./img/success.gif";
+import engineer from "./img/engineer.gif";
+import exp from "./img/exp.gif";
+import grow from "./img/grow.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./slider.css";
-import icon1 from "./dev1.svg";
-import icon2 from "./dev2.svg";
-import icon3 from "./dev3.svg";
-import icon4 from "./dev4.svg";
-import icon5 from "./dev5.svg";
-import icon6 from "./dev6.svg";
+import icon1 from "./img/dev1.svg";
+import icon2 from "./img/dev2.svg";
+import icon3 from "./img/dev3.svg";
+import icon4 from "./img/dev4.svg";
+import icon5 from "./img/dev5.svg";
+import icon6 from "./img/dev6.svg";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 export default function Devops() {
   const handleButtonClick = () => {
@@ -167,19 +169,26 @@ export default function Devops() {
 
           .col-bg {
             background-color: #fff;
+
           }
+          
 
         `}
       </style>
-      <section className="web" style={{ backgroundColor: "#f0f0f0" }}>
-        <div className="container m-2 rounded">
+      <section className="web mt-5" style={{ backgroundColor: "#f0f0f0" }}>
+        <div className="bg-primary fixed-top">
+          <Navbar />
+        </div>
+        <div className="container m-2 rounded mt-5">
           <div className="row content">
             <div
               className="col-lg-6 mt-5"
               data-aos="fade-right"
               data-aos-delay="100"
             >
-              <h1>DevOps Solutions And Services For All Your IT Needs</h1>
+              <h1 className="mt-5">
+                DevOps Solutions And Services For All Your IT Needs
+              </h1>
               <p>
                 DevOps development services drive consistent improvements in
                 maintaining software quality, bringing scalability and
@@ -200,21 +209,20 @@ export default function Devops() {
             </div>
 
             <div
-              className="col-lg-6"
+              className="col-lg-6 mt-5"
               data-aos="fade-right"
               data-aos-delay="100"
             >
               <img
                 src={dev}
                 style={{ width: "100%" }}
-                className="m-2"
+                className="mt-5"
                 alt="Description"
               />
             </div>
           </div>
         </div>
       </section>
-
       <section className="dynamic">
         <div className="container">
           <h1
@@ -322,9 +330,9 @@ export default function Devops() {
       </section>
 
       <section className="web mt-5">
-        <div className="container m-2 rounded ">
+        <div className="container m-2 rounded">
           <div className="row content">
-            <div className="col-6   mt-3 rounded">
+            <div className="col-md-6 col-sm-12 mt-3 rounded">
               <h1>Why Choose DevOps For Your Next Big Project?</h1>
               <p className="mb-4 mt-4">
                 DevOps makes software development and operations efficient and
@@ -335,64 +343,29 @@ export default function Devops() {
                 <br />
                 Other reasons why you can benefit from choosing OutCode are:
               </p>
-
-              {/* <ul className="list-group">
-                <li className="list-item">
-                  <span style={tickStyle}>&#9733;</span>
-                  <h4>Tailored Monitoring Solution</h4>
-                </li>
-                <li className="list-group-item">
-                  <span style={tickStyle}>&#9733;</span> Our non-stop
-                  availability makes communication easier
-                </li>
-                <li className="list-group-item">
-                  <span style={tickStyle}>&#9733;</span> We put much focus on
-                  agile development processes
-                </li>
-                <li className="list-group-item">
-                  <span style={tickStyle}>&#9733;</span> Freely connect with the
-                  project manager in case of any hurdle
-                </li>
-                <li className="list-group-item">
-                  <span style={tickStyle}>&#9733;</span> We strictly adhere to
-                  globally accepted data security guidelines
-                </li>
-                <li className="list-group-item">
-                  <span style={tickStyle}>&#9733;</span> Full-fledge
-                  documentation at every step of the process
-                </li>
-                <li className="list-group-item">
-                  <span style={tickStyle}>&#9733;</span> Interactive and
-                  dependable UI/UX designs
-                </li>
-                <li className="list-group-item">
-                  <span style={tickStyle}>&#9733;</span> Frequent iterative
-                  testing
-                </li>
-              </ul> */}
               <ul className="list-unstyled">
                 <li className="list-item">
                   <h4>&#9733; Tailored Monitoring Solution</h4>
                 </li>
                 <li className="list-item">
-                  <h4>&#9733; Tailored Monitoring Solution</h4>
+                  <h4>&#9733; Automated Setup Of infrastructure</h4>
                 </li>
                 <li className="list-item">
-                  <h4>&#9733; Tailored Monitoring Solution</h4>
+                  <h4>&#9733; Resilience & Robustness</h4>
                 </li>
                 <li className="list-item">
-                  <h4>&#9733; Tailored Monitoring Solution</h4>
+                  <h4>&#9733; Greater Flexibility & Agility</h4>
                 </li>
                 <li className="list-item">
-                  <h4>&#9733; Tailored Monitoring Solution</h4>
+                  <h4>&#9733; Enhanced Quality & Creativity</h4>
                 </li>
                 <li className="list-item">
-                  <h4>&#9733; Tailored Monitoring Solution</h4>
+                  <h4>&#9733; Scalability</h4>
                 </li>
               </ul>
             </div>
 
-            <div className="col-6">
+            <div className="col-md-6 col-sm-12">
               <img
                 src={dev2}
                 style={{ width: "100%" }}
@@ -405,10 +378,7 @@ export default function Devops() {
       </section>
 
       <section className="rounded bg-primary">
-        <div
-          className="container text-center text-white  "
-          style={{ width: "100%" }}
-        >
+        <div className="container text-center text-white">
           <div className="p-5">
             <p>
               500+Developers & Trained Professionals | 99 % Success Rate | 300+
@@ -416,14 +386,11 @@ export default function Devops() {
             </p>
             <h1>
               Ready To Hire Dedicated <br />
-              DevOps Engineers For
-              <br /> Smooth Deployment?
+              DevOps Engineers For <br /> Smooth Deployment?
             </h1>
-
             <button
-              className="btn btn-lg bg-warning text-black rounded-pill m-2 "
+              className="btn btn-lg bg-warning text-black rounded-pill m-2"
               type="button"
-              style={{ height: "20%" }}
               onClick={handleButtonClick}
             >
               <nav>
@@ -433,7 +400,8 @@ export default function Devops() {
                   style={{
                     textDecoration: "none",
                     color: "black",
-                    marginBottom: "5px",
+                    fontSize: "14px" /* Adjust font size as needed */,
+                    padding: "10px 20px" /* Adjust padding as needed */,
                   }}
                 >
                   Begin your journey now
@@ -510,9 +478,9 @@ export default function Devops() {
       </section>
 
       <section className="web mt-5">
-        <div className="container m-2 rounded ">
+        <div className="container m-2 rounded">
           <div className="row content">
-            <div className="col-6   mt-3 rounded">
+            <div className="col-md-6 col-sm-12 mt-3 rounded">
               <h1>Hire The Best DevOps Engineer</h1>
               <p className="mb-4 mt-4">
                 Hire the best DevOps services company to acquire the expertise
@@ -524,39 +492,33 @@ export default function Devops() {
                 Their dynamic capabilities include:
               </p>
 
-              <ul className="list-unstyle">
-                <li className="list-group-item">
+              <ul className="list-unstyled">
+                <li className="list-item">
                   <span style={tickStyle}>&#10003;</span> Skilled in Automation
                 </li>
-                <br />
-                <li className="list-group-item">
+                <li className="list-item mt-2">
                   <span style={tickStyle}>&#10003;</span> Robust Understanding
                   Of Codes
                 </li>
-                <br />
-                <li className="list-group-item">
+                <li className="list-item mt-2">
                   <span style={tickStyle}>&#10003;</span> Proactive Monitoring
                   Skills
                 </li>
-                <br />
-                <li className="list-group-item">
+                <li className="list-item mt-2">
                   <span style={tickStyle}>&#10003;</span> Knowledge Of The
-                  Latest Technologies & Tools
+                  Latest Technologies
                 </li>
-                <br />
-                <li className="list-group-item">
+                <li className="list-item mt-2">
                   <span style={tickStyle}>&#10003;</span> 24/7 Availability
                 </li>
-                <br />
-                <li className="list-group-item">
+                <li className="list-item mt-2">
                   <span style={tickStyle}>&#10003;</span> Experience In Dealing
                   With 300+ Projects
                 </li>
-                <br />
               </ul>
             </div>
 
-            <div className="col-6">
+            <div className="col-md-6 col-sm-12">
               <img
                 src={dev4}
                 style={{ width: "100%" }}
@@ -568,54 +530,59 @@ export default function Devops() {
         </div>
       </section>
       <section
-        className="counts  rounded mt-5"
+        className="counts rounded mt-5"
         style={{ backgroundColor: "#f0f0f0" }}
       >
         <div className="container content-center">
           <div className="row counters">
-            <div className="col-3 text-center text-black border-top">
+            <div className="col-md-3 col-sm-6 text-center text-black border-top">
               <img
                 src={project}
                 className="rounded-circle"
-                style={{ width: "50%", height: "50%" }}
-              ></img>
+                style={{ width: "50%", height: "auto" }}
+                alt="Project Icon"
+              />
               <h1 className="mt-2">{count}+</h1>
-
               <h4>Project Successfully Delivered</h4>
             </div>
 
-            <div className="col-3 text-center border text-black">
+            <div className="col-md-3 col-sm-6 text-center border text-black">
               <img
                 src={success}
                 className="rounded-circle"
-                style={{ width: "50%", height: "50%" }}
-              ></img>
+                style={{ width: "50%", height: "auto" }}
+                alt="Success Icon"
+              />
               <h1 className="mt-2">{count1}+</h1>
               <h4>Client Success Rate</h4>
             </div>
 
-            <div className="col-3 text-center border text-black">
+            <div className="col-md-3 col-sm-6 text-center border text-black">
               <img
                 src={engineer}
                 className="rounded-circle"
-                style={{ width: "50%", height: "50%" }}
-              ></img>
+                style={{ width: "50%", height: "auto" }}
+                alt="Engineer Icon"
+              />
               <h1 className="mt-2">{count2}+</h1>
               <h4>Team Of Pre-Vetted Engineers</h4>
             </div>
 
-            <div className="col-3  text-center border text-black">
+            <div className="col-md-3 col-sm-6 text-center border text-black">
               <img
                 src={exp}
                 className="rounded-circle"
-                style={{ width: "50%", height: "50%" }}
-              ></img>
+                style={{ width: "50%", height: "auto" }}
+                alt="Experience Icon"
+              />
               <h1 className="mt-2">{count3}+</h1>
-              <h4 className="mt-2 ">Years Of Experience In The IT Industry</h4>
+              <h4 className="mt-2">Years Of Experience In The IT Industry</h4>
             </div>
           </div>
         </div>
       </section>
+
+      <Footer />
     </>
   );
 }

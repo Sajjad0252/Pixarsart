@@ -41,34 +41,3 @@
 .right {
   right: 0;
 }
-
-.web .content {
-  overflow: hidden;
-  position: relative;
-}
-
-.web .left-column,
-.web .right-column {
-  width: 50%;
-  height: 100%;
-  position: absolute;
-  transition: transform 0.5s ease;
-}
-
-.web .left-column {
-  background-color: lightblue;
-  transform: translateX(100%);
-}
-
-.web .right-column {
-  background-color: lightcoral;
-  transform: translateX(-100%);
-}
-
-.web:hover .left-column {
-  transform: translateX(0);
-}
-
-.web:hover .right-column {
-  transform: translateX(0);
-}

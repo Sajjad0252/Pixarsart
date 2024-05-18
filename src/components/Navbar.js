@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import logo from "./log.jpg";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import logo from "./img/logo-01.png";
 import Dropdown from "react-bootstrap/Dropdown";
 import "./my.css";
 
@@ -21,17 +21,26 @@ export default function Navbar() {
   const handleDropdownClick = () => {
     setShowDropdown(!showDropdown);
   };
+  const [showDevelopersDropdown, setShowDevelopersDropdown] = useState(false);
 
+  const handleDevelopersDropdownClick = () => {
+    setShowDevelopersDropdown(!showDevelopersDropdown);
+  };
+
+  const handleDevelopersMouseEnter = () => {
+    setShowDevelopersDropdown(true);
+  };
+
+  const handleDevelopersMouseLeave = () => {
+    setShowDevelopersDropdown(false);
+  };
   return (
-    <div
-      className="container-fluid text-center text-black"
-      style={{ backgroundColor: "#3498db" }}
-    >
+    <div className="fluid text-center ">
       <div className="row p-2" style={{ fontWeight: "bold" }}>
         <div className="col-12 col-sm-6 col-md-2">
           <div className="m-2" style={{ fontWeight: "bold" }}>
             <Link className="navbar-brand text-white" to="/">
-              OutCode
+              <img src={logo} style={{ width: "100px", height: "40px" }} />
             </Link>
           </div>
         </div>
@@ -46,6 +55,59 @@ export default function Navbar() {
                   Home
                 </Link>
               </nav>
+            </div>
+            <div className="col-6 col-sm-4 col-md-auto mt-2">
+              <Dropdown
+                show={showDevelopersDropdown}
+                onMouseEnter={handleDevelopersMouseEnter}
+                onMouseLeave={handleDevelopersMouseLeave}
+                onSelect={handleSelect}
+              >
+                {/* Toggle button for Developers dropdown */}
+                <Dropdown.Toggle
+                  variant="success"
+                  style={{
+                    border: "none",
+                    background: "none",
+                    fontWeight: "bold",
+                    marginTop: "2px",
+                  }}
+                >
+                  Hire Developers
+                </Dropdown.Toggle>
+
+                {/* Dropdown menu for Developers */}
+                {showDevelopersDropdown && (
+                  <Dropdown.Menu
+                    style={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      width: "400px",
+                      margin: "15px",
+                    }}
+                  >
+                    <Dropdown.Item href="/Contact" style={{ width: "50%" }}>
+                      Web Developer
+                    </Dropdown.Item>
+                    <Dropdown.Item href="/Contact" style={{ width: "50%" }}>
+                      Mobile Developer
+                    </Dropdown.Item>
+                    <Dropdown.Item href="/Contact" style={{ width: "50%" }}>
+                      UI UX Developer
+                    </Dropdown.Item>
+                    <Dropdown.Item href="/Contact" style={{ width: "50%" }}>
+                      Cloud Developer
+                    </Dropdown.Item>
+                    <Dropdown.Item href="/Contact" style={{ width: "50%" }}>
+                      Devops Developer
+                    </Dropdown.Item>
+                    <Dropdown.Item href="/Contact" style={{ width: "50%" }}>
+                      Software Developer
+                    </Dropdown.Item>
+                    {/* Add more items as needed */}
+                  </Dropdown.Menu>
+                )}
+              </Dropdown>
             </div>
             <div className="col-6 col-sm-4 col-md-auto mt-3">
               <nav>
@@ -108,6 +170,14 @@ export default function Navbar() {
                   </Dropdown.Menu>
                 )}
               </Dropdown>
+            </div>
+
+            <div className="col-6 col-sm-4 col-md-auto mt-3">
+              <nav>
+                <Link className="text-white" to="/Blog">
+                  Blog
+                </Link>
+              </nav>
             </div>
 
             <div className="col-6 col-sm-4 col-md-auto mt-3">
