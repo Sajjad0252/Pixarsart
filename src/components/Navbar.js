@@ -35,7 +35,14 @@ export default function Navbar() {
     setShowDevelopersDropdown(false);
   };
   return (
-    <div className="fluid text-center ">
+    <div
+      className="fluid text-center  "
+      // style={{
+      //   backdropFilter: "blur(30px)",
+      //   boxShadow: "0px 0px 30px rgba(227,228,237,0.37)",
+      //   border: "2px solid rgba(225, 225, 225, 0.18)",
+      // }}
+    >
       <div className="row p-2" style={{ fontWeight: "bold" }}>
         <div className="col-12 col-sm-6 col-md-2">
           <div className="m-2" style={{ fontWeight: "bold" }}>

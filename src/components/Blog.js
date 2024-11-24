@@ -52,7 +52,7 @@ export default function Blog() {
       const submitButton = document.createElement("button");
       submitButton.type = "submit";
       submitButton.textContent = "Submit";
-      submitButton.className = "btn btn-primary"; // Add Bootstrap classes if available
+      submitButton.className = "btn btn-primary"; // Add Bootstrap classNamees if available
 
       // Append the input fields and submit button to the form
       form.appendChild(titleInput);
